@@ -1,5 +1,5 @@
 
-                                                                                                                                                                                                 body{
+body{
     margin: 0;
     font-family: Segoe UI;
 
@@ -35,7 +35,7 @@
     border: solid black 1px;
     width:auto;
     padding: 10px;
-    margin: 120px 20px 4px 570px;
+    margin: 120px 20px 4px 550px;
     background-color:white;
 }
 
@@ -56,7 +56,14 @@
     margin: 120px 20px 4px 0;
     background-color:white;
 }
-
+a{
+    color:black;
+    text-decoration-line: none;
+}
+a:hover{
+    color: rgba(3,34,248,1);
+    text-decoration-line: underline;
+}
 .clearfix:after {
     content: "";
     display: table;
