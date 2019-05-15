@@ -1,8 +1,10 @@
 
-                                                                                                                                                                                                 body{
+body {
     margin: 0;
     font-family: Segoe, "Arial";
-
+}
+h2{
+    text-align: center;
 }
 #container{
     margin:0;
@@ -103,7 +105,16 @@ a:hover{
 .menu a:hover {
     background: #eee;
 }
-
+.menu span{
+    background-color: #eee;
+    display: block;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #aaa;
+}
 .menu li {
     float: left;
     width: 20%;
@@ -120,6 +131,7 @@ a:hover{
 #content{
 float:left
 }
+
 .plaatje{
     float:left;
     max-width:1903px;
@@ -136,9 +148,11 @@ float:left
     list-style: none;
     text-align: left;
     margin:0;
-    padding:0;
+    padding:0 0 10px 0;
  }
-
+.nieuwsbrief{
+    text-align: center;
+}
 .menuRechts{
     float:left;
     width:20%;
@@ -148,18 +162,112 @@ float:left
     text-align: right;
     list-style: none;
     margin:0;
-    padding:0;
+    padding:0 0 10px 0;
 }
 .menuRechts ul{
     padding: 0 40px 0 0;
-
 }
 
 .ariekel{
     float:left;
     width:60%;
 }
+.balk{
+    background-color: rgba(3,34,248,1);
+    float:left;
+    width:100%;
+    height:4px;
+    margin: 10px 0 10px 0;
+}
+.acties{
+    float:left;
+    width:100%;
+    height:400px;
+}
+.fiets1{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 0 0 389px;
+}
+.fiets2{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 100px 0 100px;
+}
+.fiets3{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 389px 0 0;
+}
+.fiets1 img{
+    max-width: 300px;
+}
+.fiets2 img{
+    max-width: 300px;
+}
+.fiets3 img{
+    max-width: 300px;
+}
+.ontFiets{
+    float:left;
+    width:100%;
+    height:400px;
+}
+.reviews{
+    float:left;
+    width:100%;
+    height:400px;
+}
+.reviews img{
+    max-width: 150px;
+    float:left;
+}
+.kleurSter{
+    color:yellow;
+}
+.klantReactie{
+    height: 150px;
+    width: 600px;
+    border: solid 2px black;
+    float:left;
+}
 
+.krLinks{
+    width:300px;
+    height: 100%;
+    float:left;
+}
+.krRechts{
+    width:300px;
+    height:100%;
+    float:left;
+}
+.krRechts b{
+    margin: 0;
+    padding:0;
+}
+.krRating{
+    height: 50px;
+    width:100%;
+}
+.pf{
+    max-width: 150px;
+    margin:0;
+    padding:0;
+}
+.kNaam{
+    margin:0;
+    padding:0;
+}
 #footer{
     float:left;
     height:90px;
