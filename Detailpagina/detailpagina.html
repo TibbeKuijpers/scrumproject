@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	
+<meta charset="utf-8">
+<title>Detail pagina</title>
+	<link rel="stylesheet" type="text/css" href="detailpagina.css">
+</head>
+
+<body>
+	<header id="header">
+	
+	
+	</header>	<!--Navigatie bar -->
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4285F4">
+  <a class="navbar-brand" href="#">Fietsenwinkel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Fietsen</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+	<br>
+	<div id="container">
+	
+	
+	<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+ 		<div class="carousel-inner">
+    	<div class="carousel-item active">
+        <img src="fiets_heren.jpg" class="d-block w-100" alt="...">
+    	</div>
+    	<div class="carousel-item">
+     	 <img src="fiets_heren.jpg" class="d-block w-100" alt="...">
+    	</div>
+    	<div class="carousel-item">
+      	<img src="fiets_heren.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+	</div>    
+	  </div>
+    
+    <div class="col-sm">
+      <div id="beschrijving">
+		<h1>Cortina U1 N7 Heren</h1>
+			<p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
+	
+		<button id="leesmeerknop">Lees meer</button>
+		<div id="extraomschrijving" class="content1">
+  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 	nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.
+			</p>
+		</div>
+		<p class="prijs">€385</p>
+		<br><br>
+		<button href="#" class="button">in winkelmand</button>
+		</div>
+	</div>
+    </div>
+  </div>
+		
+		
+</div>
+		<footer id="footer">© 2019 Copyright
+			<a href="#">Fietsenwinkel naam hier</a>
+		</footer> 
+		
+
+	
+	
+
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<!-- Lees meer script -->
+	
+	<script>
+	document.getElementById("leesmeerknop").addEventListener("click", function() {
+		
+		 if (document.getElementById("extraomschrijving").style.display === "block") {
+      document.getElementById("extraomschrijving").style.display = "none";
+    } else {
+      document.getElementById("extraomschrijving").style.display = "block";
+    }
+		
+	})
+	</script>
+</body>
+</html>

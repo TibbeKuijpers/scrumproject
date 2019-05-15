@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+.clearfix:after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+
+
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"
+}
+
+#beschrijving {
+	height: 150px;
+	width: 600px;
+	float: left;
+}
+
+#beschrijving h1 {
+	text-align: left;
+	color: #4285F4;
+	font-weight: 800px;
+}
+
+#header {
+	background-color: #4285F4;
+	height: 50px;
+}
+
+#header h1 {
+	text-align: center;
+	color: white;
+	padding-top: 5px;
+}
+
+#afbeelding {
+	margin: 0 auto;
+	float:left;
+}
+
+#container {
+	background: #FFFFFF;
+/* simple linear gradient */
+   background: linear-gradient(#FFFFFF, #FFFFFA);
+	margin: 0 auto;
+	height: 1080px;
+	width: 1450px;		
+}
+
+#header {
+	margin: 0 auto;
+	background-image: url("PdF_Tweedehands_940x235px_A11_Rectangle_117_pattern.png");
+	background-repeat: no-repeat;
+	height: 480px;
+	width: auto;
+}
+
+.prijs {
+	font-size: 35px;
+	font-weight: 600;
+	color: #4285F4;
+}
+
+.button {
+  background-color: #4285F4; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+}
+
+#leesmeerknop {
+  margin: 0 auto;
+  padding: 0 0 0 0;
+  color: #4285F4;
+  text-decoration: none;
+  border: 0px solid white;
+  background-color: white;
+  font-weight: 500;
+}
+
+#footer {
+	width: 100%;
+	height: 50px;
+	background-color: #4285F4;
+	text-align: center;
+	font-size: 16px;
+	color: #0d47a1;
+	font-weight: 600;
+	padding-top: 12px;
+		}
+
+#footer a {
+	text-decoration: none;
+	color: #0d47a1;
+	
+}
+
+.collapsible1 {
+  background-color: #4285F4;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content1 {
+  padding: 0 0 0 0;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  transition:display 0.5s;
+  margin: 0 auto;
+}
+
+#leesmeerknop:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
