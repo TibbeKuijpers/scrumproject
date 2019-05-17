@@ -31,15 +31,91 @@
     </div>
 	
     <article id="content">
-		<div class="filter">
 		<?php
 			if(isset($_POST['filter'])){
 				echo "Toegepaste filters: Merk: ". $_POST['merk'] . " / Maat: " . $_POST['maat'] . " / Gender: " . $_POST['gender'];
 			}
 		?>
+		<div id="filter">
 			<br><br>
-			<a class="btn btn-primary" href="Shop.html" role="button">Terug naar filters</a>
+			
+			<div id="card1" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			<div id="card2" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			<div id="card3" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			<div id="card4" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			<div id="card5" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			<div id="card6" style="width: 18rem;">
+  				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
+  				<div class="card-body">
+    				<h5 class="card-title">Lorem Ipsum</h5>
+   					<p class="card-text">Batavus<br>€500,-</p>
+  				</div>
+			</div>
+			
+			<br><br>
+			
 		</div>
+		<a class="btn btn-primary" href="Shop.html" role="button">Terug naar filters</a>
 	</article>
 
 		

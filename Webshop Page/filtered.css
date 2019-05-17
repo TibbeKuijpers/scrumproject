@@ -37,7 +37,7 @@
     border: solid black 1px;
     width:auto;
     padding: 10px;
-    margin: 120px 20px 4px 570px;
+    margin: 120px 20px 4px 550px;
     background-color:white;
 }
 
@@ -116,8 +116,49 @@
 	float:left;
 }
 
-.filter {
-	padding: 5px;
+#card1{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+#card2{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+
+#card3{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+
+#card4{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+
+#card5{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+
+#card6{
+	border:solid black 1px;
+	float:left;
+	margin:5px;
+}
+
+
+#filter {
+	padding:0 40px;
+}
+
+#content a{
+	margin: 20px;
+	
 }
 
 #footer{
