@@ -142,6 +142,10 @@
 	float:left;
 }
 
+img{
+	margin-top:5px;
+}
+
 #footer{
     height:90px;
     background-color: rgba(3,34,248,1);
