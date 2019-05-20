@@ -30,23 +30,19 @@
 	//hierboven bezig
 	
 	if(isset($_POST['invoeren'])){
-	$query = "INSERT INTO klantgegevens (klantID, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`) VALUES (NULL, '{$_POST['gebruikersnaam']}', '{$_POST['geslacht']}', '{$_POST['voornaam']}', '{$_POST['achternaam']}', '{$_POST['telefoonnummer']}', '{$_POST['adres']}', '{$_POST['woonplaats']}', '{$_POST['postcode']}', '{$_POST['email']}')";
+	$query = "INSERT INTO klantgegevens (klantID, gebruikersNaam, geslacht, voorNaam, achterNaam, telefoonNummer, adres, woonPlaats, postCode, email) 
+	VALUES
+	('NULL', 
+	'{$_POST['gebruikersnaam']}',
+	'{$_POST['geslacht']}', 
+	'{$_POST['voornaam']}',
+	'{$_POST['achternaam']}',
+	'{$_POST['telefoonnummer']}',
+	'{$_POST['adres']}',
+	'{$_POST['woonplaats']}',
+	'{$_POST['postcode']}',
+	'{$_POST['email']}')";
 	}
-	$result = $connect->query($sql);
-			echo "<br>";
-		echo "<br>";
-	while($row = $result->fetch_assoc()){
-		echo "<tr>
-			<td>{$row['gebruikersNaam']}</td>
-			<td>{$row['geslacht']}</td>
-			<td>{$row['voorNaam']}</td>
-			<td>{$row['achterNaam']}</td>
-			<td>{$row['telefoonnummer']}</td>
-			<td>{$row['adres']}</td>
-			<td>{$row['woonPlaats']}</td>
-			<td>{$row['postCode']}</td>
-			<td>{$row['email']}</td>
-		</tr>";}
 	?>
 
 	
@@ -85,9 +81,26 @@
 			<th>Postcode</th>
 			<th>E-Mail</th>
 		</tr>
-		
+		<br><br>
 	<?php
 	
+		
+			$result = $connect->query($sql);
+			echo "<br>";
+		echo "<br>";
+		
+			while($row = $result->fetch_assoc()){
+		echo "<tr>
+			<td>{$row['gebruikersNaam']}</td>
+			<td>{$row['geslacht']}</td>
+			<td>{$row['voorNaam']}</td>
+			<td>{$row['achterNaam']}</td>
+			<td>{$row['telefoonnummer']}</td>
+			<td>{$row['adres']}</td>
+			<td>{$row['woonPlaats']}</td>
+			<td>{$row['postCode']}</td>
+			<td>{$row['email']}</td>
+		</tr>";}
 		
 	$connect->close();
 	?>
