@@ -231,12 +231,19 @@ float:left
 .kleurSter{
     color:yellow;
 }
-.klantReactie{
+.klantReactieLinks{
     height: 100px;
     width: 300px;
     border: solid 2px black;
     float:left;
-    margin: 30px 0px 0 30px;
+    margin: 20px 20px 0 600px;
+}
+.klantReactieRechts{
+    height: 100px;
+    width: 300px;
+    border: solid 2px black;
+    float:left;
+    margin: 20px 600px 0 0;
 }
 
 .krLinks{
@@ -269,9 +276,12 @@ float:left
 .kNaam{
     margin: 10% 0 0 0 ;
     padding:0;
+
 }
-#footer{
+#footer{s
     float:left;
     height:90px;
+    width: 100%;
+    margin: 200px 0 0 0;
     background-color: rgba(3,34,248,1);
 }
