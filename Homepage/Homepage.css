@@ -1,0 +1,287 @@
+
+body {
+    margin: 0;
+    font-family: Segoe, "Arial";
+}
+h2{
+    text-align: center;
+}
+#container{
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: auto;
+
+}
+#header{
+    height: 245px;
+    margin:0;
+}
+
+#header h1{
+    margin:0;
+    padding: 20px 50px 50px 50px;
+    width: 50%;
+    font-size: 50px;
+    height: 100px;
+    float:left;
+}
+#header p{
+    margin:0;
+    padding:0;
+    font-size: 25px;
+    font-style: normal;
+    color:#aaaaaa;
+}
+.inloggen{
+    float: left;
+    border: solid black 1px;
+    width:auto;
+    padding: 10px;
+    margin: 120px 20px 4px 550px;
+    background-color:white;
+}
+
+.registeren{
+    float: left;
+    border: solid black 1px;
+    width:auto;
+    padding: 10px;
+    margin: 120px 20px 4px 0;
+    background-color:white;
+}
+
+.winkelwagen{
+    float: left;
+    border: solid black 1px;
+    width:auto;
+    padding: 10px;
+    margin: 120px 20px 4px 0;
+    background-color:white;
+}
+a{
+    color:black;
+    text-decoration-line: none;
+}
+a:hover{
+    color:rgba(3,34,248,1);
+    text-decoration-line: underline;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu ul {
+    clear:left;
+    list-style: none;
+    max-width: 840px;
+    margin: 0 auto;
+    padding:0;
+}
+
+.menu {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(3,34,248,1);
+    width:100%;
+    height: 70px;
+    float:left;
+}
+
+.menu a {
+    display: block;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #aaa;
+    text-decoration: none;
+
+}
+
+.menu a:hover {
+    background: #eee;
+}
+.menu span{
+    background-color: #eee;
+    display: block;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #aaa;
+}
+.menu li {
+    float: left;
+    width: 20%;
+    border-right: 1px solid #ddd;
+    max-width: 160px;
+}
+
+.menu li:last-child {
+    border-right: none;
+    max-width: 160px;
+}
+
+
+#content{
+float:left
+}
+
+.plaatje{
+    float:left;
+    max-width:1903px;
+    align-content: center;
+    margin:0;
+    padding:0;
+}
+
+.menuLinks{
+    float:left;
+    width:20%;
+}
+.menuLinks li {
+    list-style: none;
+    text-align: left;
+    margin:0;
+    padding:0 0 10px 0;
+ }
+.nieuwsbrief{
+    text-align: center;
+}
+.menuRechts{
+    float:left;
+    width:20%;
+}
+
+.menuRechts li {
+    text-align: right;
+    list-style: none;
+    margin:0;
+    padding:0 0 10px 0;
+}
+.menuRechts ul{
+    padding: 0 40px 0 0;
+}
+
+.ariekel{
+    float:left;
+    width:60%;
+}
+.balk{
+    background-color: rgba(3,34,248,1);
+    float:left;
+    width:100%;
+    height:4px;
+    margin: 10px 0 10px 0;
+}
+.acties{
+    float:left;
+    width:100%;
+    height:400px;
+}
+.fiets1{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 0 0 389px;
+}
+.fiets2{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 100px 0 100px;
+}
+.fiets3{
+    float:left;
+    max-width: 300px;
+    height: 260px;
+    border: solid 1px black;
+    text-align: center;
+    margin: 0 389px 0 0;
+}
+.fiets1 img{
+    max-width: 300px;
+}
+.fiets2 img{
+    max-width: 300px;
+}
+.fiets3 img{
+    max-width: 300px;
+}
+.ontFiets{
+    float:left;
+    width:100%;
+    height:400px;
+}
+.reviews{
+    float:left;
+    width:100%;
+    height:400px;
+}
+
+.kleurSter{
+    color:yellow;
+}
+.klantReactieLinks{
+    height: 100px;
+    width: 300px;
+    border: solid 2px black;
+    float:left;
+    margin: 20px 20px 0 600px;
+}
+.klantReactieRechts{
+    height: 100px;
+    width: 300px;
+    border: solid 2px black;
+    float:left;
+    margin: 20px 600px 0 0;
+}
+
+.krLinks{
+    width:50%;
+    height: 100%;
+    float:left;
+}
+.krRechts{
+    width: 50%;
+    height:100%;
+    float:left;
+}
+.krRechts img{
+    margin: 2px;
+    padding: 0;
+    float: right;
+    max-width: 80px;
+}
+
+.krRating{
+    margin: 5px 0 0 0;
+    height: 30%;
+    width:100%;
+}
+.pf{
+    max-width: 150px;
+    margin:0;
+    padding:0;
+}
+.kNaam{
+    margin: 10% 0 0 0 ;
+    padding:0;
+
+}
+#footer{
+    float:left;
+    height:90px;
+    width: 100%;
+    margin: 200px 0 0 0;
+    background-color: rgba(3,34,248,1);
+}
