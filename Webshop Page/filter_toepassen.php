@@ -31,11 +31,13 @@
     </div>
 	
     <article id="content">
+		<div class="resultaat">
 		<?php
 			if(isset($_POST['filter'])){
 				echo "Toegepaste filters: Merk: ". $_POST['merk'] . " / Maat: " . $_POST['maat'] . " / Gender: " . $_POST['gender'];
 			}
 		?>
+		</div>
 		<div class="filter">
 			
 			
