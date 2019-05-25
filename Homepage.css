@@ -59,6 +59,7 @@ h2{
     margin: 120px 20px 4px 0;
     background-color:white;
 }
+
 a{
     color:black;
     text-decoration-line: none;
@@ -67,13 +68,6 @@ a:hover{
     color:rgba(3,34,248,1);
     text-decoration-line: underline;
 }
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .menu ul {
     clear:left;
     list-style: none;
@@ -81,7 +75,6 @@ a:hover{
     margin: 0 auto;
     padding:0;
 }
-
 .menu {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -90,7 +83,6 @@ a:hover{
     height: 70px;
     float:left;
 }
-
 .menu a {
     display: block;
     padding: 20px;
@@ -99,9 +91,7 @@ a:hover{
     text-align: center;
     color: #aaa;
     text-decoration: none;
-
 }
-
 .menu a:hover {
     background: #eee;
 }
@@ -121,17 +111,15 @@ a:hover{
     border-right: 1px solid #ddd;
     max-width: 160px;
 }
-
 .menu li:last-child {
     border-right: none;
     max-width: 160px;
 }
-
+/*einde header*/
 
 #content{
 float:left
 }
-
 .plaatje{
     float:left;
     max-width:1903px;
@@ -175,48 +163,55 @@ float:left
 .balk{
     background-color: rgba(3,34,248,1);
     float:left;
-    width:100%;
+    width:99.9%;
     height:4px;
     margin: 10px 0 10px 0;
 }
 .acties{
     float:left;
-    width:100%;
-    height:400px;
+    width:60%;
+    height:auto;
+}
+.acties hr{
+    margin:0;
+    padding:0;
 }
 .fiets1{
     float:left;
     max-width: 300px;
     height: 260px;
-    border: solid 1px black;
     text-align: center;
-    margin: 0 0 0 389px;
+    border:ThreeDShadow solid 1px;
+    border-radius:3px;
+
 }
-.fiets2{
+
+.fiets1 p {
+    float: left;
+    padding: 0 0 10px 10px;
+
+}
+.bekijken{
+    height: 10%;
+    width: 21%;
     float:left;
-    max-width: 300px;
-    height: 260px;
-    border: solid 1px black;
+    background: rgba(3,34,248,1);;
+    margin: 5% 0% 0% 55%;
+    border: floralwhite solid 1px;
+    color: white;
     text-align: center;
-    margin: 0 100px 0 100px;
+    text-decoration: none;
+    border-radius: 10px;
 }
-.fiets3{
-    float:left;
-    max-width: 300px;
-    height: 260px;
-    border: solid 1px black;
-    text-align: center;
-    margin: 0 389px 0 0;
+.bekijken:hover{
+    color:white;
+    text-decoration: underline;
 }
+
 .fiets1 img{
     max-width: 300px;
 }
-.fiets2 img{
-    max-width: 300px;
-}
-.fiets3 img{
-    max-width: 300px;
-}
+
 .ontFiets{
     float:left;
     width:100%;
