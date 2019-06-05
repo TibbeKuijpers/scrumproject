@@ -8,6 +8,19 @@
 </head>
 
 <body>
+	<?php
+		$servernaam = 'localhost';
+		$username = 'root';
+		$password = '';
+		$database = 'tweedehandsfietsen';
+	
+		//connection
+		$connect = new MySQLi($servernaam, $username, $password, $database);
+	
+		if ($connect->connect_error){
+			die("FOUT: " . $connect->connect_error);
+		}
+	?>
 	<div class="container-fluid">
 		<header id="header">
 			Profielpagina
@@ -40,43 +53,103 @@
 			<div id="card1" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+					<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 			<div id="card2" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+    				<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+   					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 			<div id="card3" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+    				<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+   					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 			<div id="card4" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+    				<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+   					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 			<div id="card5" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+    				<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+   					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 			<div id="card6" style="width: 18rem;">
   				<img src="Images/download_A20_Rectangle_446_pattern.png" class="card-img-top" alt="...">
   				<div class="card-body">
-    				<h5 class="card-title">Lorem Ipsum</h5>
-   					<p class="card-text">Batavus<br>€500,-</p>
+    				<h5 class="card-title"><?php $sql='SELECT `fietsNaam`FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsNaam'];
+    }}											 ?></h5>
+   					<p class="card-text"><?php $sql='SELECT `fietsMerk`, `prijsFiets` FROM `fietsen` WHERE 1';
+												 $result = $connect->query($sql);
+												 if ($result->num_rows > 0) {
+												 while($row = $result->fetch_assoc()) {
+												 echo $row['fietsMerk'] . "<br> €" . $row['prijsFiets'] . ",-";
+    }}											 ?></p>
   				</div>
 			</div>
 		</div>
