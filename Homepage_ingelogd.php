@@ -4,16 +4,61 @@
     <meta charset="UTF-8">
     <title>Tweedehandsfietsen</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="Homepage.css" type="text/css" rel="stylesheet">
+    <link href="Homepage.css" type="text/css" rel="stylesheet" >
 </head>
 <body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "tweedehandsfietsen";
+
+$connect = new mysqli($servername, $username, $password, $database);
+
+if ($connect->connect_error) {
+die("FOUT: " . $connect->connect_error);
+}
+
+$fietsQuery = "SELECT * FROM fietsen";
+$result = $connect->query($fietsQuery);
+$row = $result->fetch_assoc();
+$infoFiets ="<p class='fiets'>{$row['fietsNaam']}<br>{$row['fietsMerk']}<br>€{$row['prijs']}</p>";
+
+$ratingQuary = "SELECT rating FROM reviews";
+$result = $connect->query($ratingQuary);
+$row= $result->fetch_assoc();
+$ratingGetal = $row['rating'];
+
+if(isset($_POST['inschrijven']) && isset($_POST['email'])){
+
+    $_POST{'ingeschreven'}= 1;
+    $query = "INSERT INTO `klantgegevens` (`klantID`, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`, `profiel`, `inschrijven nieuwsbrief`) VALUES (NULL, '', '', '', '', '', '', '', '', '{$_POST['email']}','','{$_POST['ingeschreven']}')";
+
+//	$query = "INSERT INTO 'klantgegevens' (klantID, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`) VALUES (NULL, '{$_POST['gebruikersnaam']}', '{$_POST['geslacht']}', '{$_POST['voornaam']}', '{$_POST['achternaam']}', '{$_POST['telefoonnummer']}', '{$_POST['adres']}', '{$_POST['woonplaats']}', '{$_POST['postcode']}', '{$_POST['email']}')";
+
+    $add = $connect->query($query);
+
+}
+
+function rating($rating){
+
+    $hSter = 5 - $rating;
+    $ster = 5 - $hSter;
+    while($ster>0){
+        echo"<i class=\"fas fa-star kleurSter\"></i>";
+        $ster--;
+    }
+    while($hSter>0){
+        echo"<i class=\"fas fa-star\"></i>";
+        $hSter--;
+    }
+}
+?>
 <div id="container">
     <div id="header">
         <h1>Tweedehandsfietsen.nl<br><p>Elke fiets verdient een tweede kans!!</p></h1>
-
-
-        <nav class="inloggen"><a href="#">Inloggen</a></nav>
-        <nav class="registeren"><a href="#">Registreren</a></nav>
+        <nav class="inloggen"><a href="Homepage.php">Uitloggen</a></nav>
+        <nav class="registeren"><a href="#"><i class="fas fa-user-circle"></i></a></nav>
         <nav class="winkelwagen"><a href="#"><i class="fas fa-shopping-cart"></i></a></nav>
 
             <nav class="menu">
@@ -48,19 +93,19 @@
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
         </div>
@@ -84,31 +129,31 @@
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
             <div class="fiets1">
             <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
             <hr>
-            <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
             <a  class="bekijken" href="#">Bekijken</a>
         </div>
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
             <div class="fiets1">
                 <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
                 <hr>
-                <p>Gazelle<br>€***,-</p>
+                <?php echo $infoFiets;?>
                 <a  class="bekijken" href="#">Bekijken</a>
             </div>
         </div>
@@ -119,7 +164,9 @@
         <article class="ariekel">
             <h2>Lorem Ipsum</h2><br><p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten</p>
             <h2>Inschrijven nieuwsbrief</h2>
-            <form class="nieuwsbrief">E-mail <input type="email" name="email"><input type="submit" value="Inschrijven" name="Inschrijven"></form>
+
+            <form class="nieuwsbrief" method="post">E-mail <input type="email" name="email" required ><input type="submit" value="Inschrijven" name="inschrijven"></form>
+
         </article>
 
         <hr class="balk">
@@ -129,7 +176,7 @@
     <div>
         <div class="klantReactieLinks">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -139,7 +186,7 @@
         </div>
         <div class="klantReactieRechts">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -149,7 +196,7 @@
         </div>
         <div class="klantReactieLinks">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -159,7 +206,7 @@
         </div>
         <div class="klantReactieRechts">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -169,7 +216,7 @@
         </div>
         <div class="klantReactieLinks">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -179,7 +226,7 @@
         </div>
         <div class="klantReactieRechts">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -189,7 +236,7 @@
         </div>
         <div class="klantReactieLinks">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -199,7 +246,7 @@
         </div>
         <div class="klantReactieRechts">
             <div class="krLinks">
-                <div class="krRating"><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="fas fa-star kleurSter"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                <div class="krRating"><?php rating($ratingGetal) ?></div>
                 <p>Super kwaliteit</p>
 
             </div><div class="krRechts">
@@ -214,6 +261,7 @@
 <!--einde content    -->
     <div id="footer"></div>
 </div>
-
+<?php $connect->close();
+?>
 </body>
 </html>
