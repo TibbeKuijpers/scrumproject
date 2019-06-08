@@ -22,8 +22,15 @@ die("FOUT: " . $connect->connect_error);
 $fietsQuery = "SELECT * FROM fietsen";
 $result = $connect->query($fietsQuery);
 $row = $result->fetch_assoc();
-$infoFiets ="<p class='fiets'>{$row['fietsNaam']}<br>{$row['fietsMerk']}<br>€{$row['prijs']}</p>";
+while(1)
+    {
+        echo"<tr>";
 
+        echo"<td>{$row['fietsNaam']}<br> 
+        {$row['fietsMerk']}<br> 
+        {$row['prijs']} </td>";
+        echo"</tr>";
+}
 $ratingQuary = "SELECT rating FROM reviews";
 $result = $connect->query($ratingQuary);
 $row= $result->fetch_assoc();
