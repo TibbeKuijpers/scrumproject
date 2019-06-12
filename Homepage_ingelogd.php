@@ -89,25 +89,22 @@ function rating($rating){
         </nav>
 
         <div class="acties">
-             <h2>Acties</h2>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
+
+            <h2>Acties</h2>
+            <?php
+            $result = $connect->query($fietsQuery);
+            if($resultCheck > 0){
+
+                while($row=mysqli_fetch_assoc($result)){
+                    echo" <div class='fiets1'>";
+                    echo "<img src='". $row['fietsPlaatje']."' alt='plaatjefiets'>";
+                    echo"<hr>";
+                    echo "<span class='fiets'>".$row['fietsNaam']."<br>";
+                    echo $row['fietsMerk']."<br>";
+                    echo "€". $row['prijs']."</span>";
+                    echo "<a  class='bekijken' href='#'>Bekijken</a></div>";
+
+                }} ?>
         </div>
 
         <nav class="menuRechts">
@@ -126,36 +123,22 @@ function rating($rating){
 <!--bovenkant website-->
         <div class="ontFiets">
             <h2>Onlangs toegevoegd</h2>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-            <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-            <hr>
-                <?php echo $infoFiets;?>
-            <a  class="bekijken" href="#">Bekijken</a>
-        </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
+            <?php
+
+            $result = $connect->query($fietsQuery);
+            $x=0;
+            while($x<5){
+                while($row=mysqli_fetch_assoc($result)){
+                    echo" <div class='fiets1'>";
+                    echo "<img src='". $row['fietsPlaatje']."' alt='plaatjefiets'>";
+                    echo"<hr>";
+                    echo "<span class='fiets'>".$row['fietsNaam']."<br>";
+                    echo $row['fietsMerk']."<br>";
+                    echo "€". $row['prijs']."</span>";
+                    echo "<a  class='bekijken' href='#'>Bekijken</a></div>";
+
+                }
+                $x++;} ?>
         </div>
 
 

@@ -120,7 +120,8 @@ a:hover{
 /*einde header*/
 
 #content{
-float:left
+    float:left;
+    width:100%;
 }
 .plaatje{
     float:left;
@@ -186,11 +187,12 @@ float:left
 }
 .fiets1{
     float:left;
-    max-width: 300px;
-    height: 280px;
+    width:300px;
+    height: 290px;
     border:ThreeDShadow solid 1px;
     border-radius:3px;
-    margin: 0 30px;
+    margin: 10px 30px;
+
 
 }
 
@@ -208,10 +210,9 @@ float:left
 .bekijken{
     height: 10%;
     width: 21%;
-    float:left;
-    margin: 0 0 0 0;
+    float:right;
     background: rgba(3,34,248,1);;
-    margin: 10px 0 0 130px;
+    margin: 0 0 10px 0;
     padding: 0;
     border: floralwhite solid 1px;
     color: white;
@@ -229,7 +230,8 @@ float:left
 }
 
 .fiets1 img{
-    max-width: 300px;
+
+   width:300px;
 }
 
 .ontFiets{

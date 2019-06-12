@@ -19,27 +19,20 @@ if ($connect->connect_error) {
 die("FOUT: " . $connect->connect_error);
 }
 
-$fietsQuery = "SELECT * FROM fietsen";
+$fietsQuery = "SELECT * FROM fietsen;";
 $result = $connect->query($fietsQuery);
-$row = $result->fetch_assoc();
-while(1)
-    {
-        echo"<tr>";
+$resultCheck= mysqli_num_rows($result);
 
-        echo"<td>{$row['fietsNaam']}<br> 
-        {$row['fietsMerk']}<br> 
-        {$row['prijs']} </td>";
-        echo"</tr>";
-}
 $ratingQuary = "SELECT rating FROM reviews";
 $result = $connect->query($ratingQuary);
 $row= $result->fetch_assoc();
 $ratingGetal = $row['rating'];
 
+
 if(isset($_POST['inschrijven']) && isset($_POST['email'])){
 
     $_POST{'ingeschreven'}= 1;
-    $query = "INSERT INTO `klantgegevens` (`klantID`, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`, `profiel`, `inschrijven nieuwsbrief`) VALUES (NULL, '', '', '', '', '', '', '', '', '{$_POST['email']}','','{$_POST['ingeschreven']}')";
+    $query = "INSERT INTO `klantgegevens` (`klantID`, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`, `profiel`, `inschrijven nieuwsbrief`) VALUES (NULL, '', '', '', '', '', '', '', '', '{$_POST['email']}','','{$_POST['ingeschreven']}');";
 
 //	$query = "INSERT INTO 'klantgegevens' (klantID, `gebruikersNaam`, `geslacht`, `voorNaam`, `achterNaam`, `telefoonNummer`, `adres`, `woonPlaats`, `postCode`, `email`) VALUES (NULL, '{$_POST['gebruikersnaam']}', '{$_POST['geslacht']}', '{$_POST['voornaam']}', '{$_POST['achternaam']}', '{$_POST['telefoonnummer']}', '{$_POST['adres']}', '{$_POST['woonplaats']}', '{$_POST['postcode']}', '{$_POST['email']}')";
 
@@ -59,6 +52,7 @@ function rating($rating){
         echo"<i class=\"fas fa-star\"></i>";
         $hSter--;
     }
+
 }
 ?>
 <div id="container">
@@ -96,25 +90,22 @@ function rating($rating){
         </nav>
 
         <div class="acties">
+
              <h2>Acties</h2>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
+            <?php
+            $result = $connect->query($fietsQuery);
+            if($resultCheck > 0){
+
+                while($row=mysqli_fetch_assoc($result)){
+                   echo" <div class='fiets1'>";
+                    echo "<img src='". $row['fietsPlaatje']."' alt='plaatjefiets'>";
+                    echo"<hr>";
+                    echo "<span class='fiets'>".$row['fietsNaam']."<br>";
+                    echo $row['fietsMerk']."<br>";
+                    echo "€". $row['prijs']."</span>";
+                    echo "<a  class='bekijken' href='#'>Bekijken</a></div>";
+
+                }} ?>
         </div>
 
         <nav class="menuRechts">
@@ -133,36 +124,22 @@ function rating($rating){
 <!--bovenkant website-->
         <div class="ontFiets">
             <h2>Onlangs toegevoegd</h2>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-            <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-            <hr>
-                <?php echo $infoFiets;?>
-            <a  class="bekijken" href="#">Bekijken</a>
-        </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
-            <div class="fiets1">
-                <a href="#"><img alt="Fiets" src="Images/download_A20_Rectangle_446_pattern.png"></a>
-                <hr>
-                <?php echo $infoFiets;?>
-                <a  class="bekijken" href="#">Bekijken</a>
-            </div>
+            <?php
+
+            $result = $connect->query($fietsQuery);
+            $x=0;
+            while($x<5){
+                while($row=mysqli_fetch_assoc($result)){
+                    echo" <div class='fiets1'>";
+                    echo "<img src='". $row['fietsPlaatje']."' alt='plaatjefiets'>";
+                    echo"<hr>";
+                    echo "<span class='fiets'>".$row['fietsNaam']."<br>";
+                    echo $row['fietsMerk']."<br>";
+                    echo "€". $row['prijs']."</span>";
+                    echo "<a  class='bekijken' href='#'>Bekijken</a></div>";
+
+                }
+                $x++;} ?>
         </div>
 
 
@@ -178,91 +155,89 @@ function rating($rating){
 
         <hr class="balk">
 
-    <div class="reviews">
-    <h2>Reviews</h2>
-    <div>
-        <div class="klantReactieLinks">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+        <div class="reviews">
+            <h2>Reviews</h2>
+            <div>
+                <div class="klantReactieLinks">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-                <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-            </div>
-        </div>
-        <div class="klantReactieRechts">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieRechts">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieLinks">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieLinks">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieRechts">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieRechts">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieLinks">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieLinks">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieRechts">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieRechts">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieLinks">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieLinks">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-        <div class="klantReactieRechts">
-            <div class="krLinks">
-                <div class="krRating"><?php rating($ratingGetal) ?></div>
-                <p>Super kwaliteit</p>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
+                <div class="klantReactieRechts">
+                    <div class="krLinks">
+                        <div class="krRating"><?php rating($ratingGetal) ?></div>
+                        <p>Super kwaliteit</p>
 
-            </div><div class="krRechts">
-            <b class="kNaam"><br>Klant-1</b>
-            <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
-        </div>
-        </div>
-
-    </div>
+                    </div><div class="krRechts">
+                        <b class="kNaam"><br>Klant-1</b>
+                        <img class="pf" src="Images/blank-profile-picture-973460_1280.png" alt="Profiel">
+                    </div>
+                </div>
     </div>
     </div>
 <!--einde content    -->
